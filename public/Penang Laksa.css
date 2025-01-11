@@ -1,0 +1,32 @@
+body {
+  background-image: url("OIP (8).jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.title {
+  font-size: 50px;
+  text-align: center;
+}
+
+nav {
+  width: 500px;
+  margin: 50px auto;
+  color: #555;
+  padding: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.1); /* 边框变得更加微妙 */
+  border-radius: 10px; /* 圆角 */
+  background-color: rgba(255, 255, 255, 0.8); /* 背景为半透明的白灰色 */
+  margin-bottom: 50px;
+}
+
+.content {
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.image {
+  line-height: 50px;
+  text-align: center;
+}

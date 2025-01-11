@@ -1,0 +1,546 @@
+/* 确保 body 和 html 的 margin 和 padding 为 0 */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.title {
+  text-align: center;
+}
+
+.clear {
+  clear: both;
+}
+
+.logo {
+  width: 1010px;
+  height: auto;
+  margin: 10px auto;
+}
+
+nav {
+  width: 1010px;
+  height: 40px;
+  margin: 20px auto;
+  border-bottom: 1px dotted #611111;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 15px;
+  display: flex;
+  justify-content: center; /* 居中内容 */
+}
+
+nav ul {
+  display: flex; /* 使用flexbox布局来避免float问题 */
+  padding: 0;
+  margin: 0;
+  list-style-type: none; /* 移除列表样式 */
+  justify-content: space-around; /* 使导航项均匀分布 */
+}
+
+nav li {
+  padding: 5px 28px;
+  text-align: center;
+}
+
+.title1 {
+  font-size: 18px;
+  line-height: 30px;
+  color: #611111;
+}
+
+nav li a {
+  font-size: 18px;
+  line-height: 30px;
+  color: #611111;
+  display: block;
+  text-decoration: none; /* 去除链接的下划线 */
+}
+
+.main {
+  width: 1000px;
+  margin: 50px auto; /* 调整顶部空隙 */
+  font-size: 14px;
+  line-height: 24px;
+  color: #555;
+  padding: 20px; /* 内边距 */
+  border: 1px solid rgba(0, 0, 0, 0.1); /* 边框变得更加微妙 */
+  border-radius: 10px; /* 圆角 */
+  background-color: rgba(255, 255, 255, 0.8); /* 背景为半透明的白灰色 */
+  margin-bottom: 50px; /* 与页面底部保持一定间距 */
+}
+
+.main p {
+  font-size: 20px;
+  line-height: 26px;
+  color: #666;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.main h2 {
+  font-size: 22px;
+  line-height: 40px;
+  color: #611111;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: 1px dotted #611111;
+  font-family: 楷体;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto; /* 确保容器不在顶部有额外的间距 */
+  overflow: hidden;
+  padding: 0; /* 确保容器没有内边距 */
+}
+
+.carousel-container {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel img {
+  width: 100%;
+  height: 400px;
+  object-fit: contain; /* 保持完整显示，不裁剪 */
+  display: block;
+  margin-top: 0; /* 确保没有上边距 */
+}
+
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.carousel-nav button {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.carousel-nav button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.footer {
+  width: 1010px;
+  height: auto;
+  margin: 10px auto;
+  border-top: 1px dotted #ccc;
+  padding-top: 10px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 24px;
+}
+
+@media (max-width: 768px) {
+  /* 手机设备样式 */
+  .hotel-card {
+    flex-direction: column; /* 让酒店卡片在小屏设备上纵向排列 */
+  }
+
+  .hotel-image img {
+    width: 100%;
+  }
+
+  .main {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 1024px) {
+  /* 平板设备样式 */
+  .main {
+    width: 90%; /* 更适合中型屏幕 */
+  }
+}
+
+.hotel-card {
+  display: flex;
+  width: 100%;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px; /* 卡片之间的垂直间距 */
+}
+
+.hotel-image {
+  margin-right: 20px; /* 图片和文字之间的间距 */
+}
+
+.hotel-image img {
+  width: 400px;
+  height: auto;
+  object-fit: cover;
+}
+
+.hotel-details {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hotel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.hotel-list {
+  display: flex;
+  flex-direction: column; /* 强制垂直排列 */
+  gap: 20px; /* 每个卡片之间的间距 */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hotel-header h2 {
+  font-size: 20px;
+  color: #333;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.rating span:first-child {
+  font-size: 18px;
+  color: #4caf50;
+  margin-right: 10px;
+}
+
+.review-count {
+  font-size: 14px;
+  color: #555;
+}
+
+.features {
+  list-style: none;
+  margin-bottom: 15px;
+}
+
+.features li {
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.show-prices {
+  background-color: #ffc107;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.show-prices:hover {
+  background-color: #e0a800;
+}
+
+.enter-dates {
+  font-size: 12px;
+  color: #888;
+  margin-left: 10px;
+}
+
+.visit-site {
+  font-size: 14px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.visit-site:hover {
+  text-decoration: underline;
+}
+
+ul {
+  font-size: 30px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 20px;
+}
+
+.card {
+  position: relative;
+  width: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.card .label1,
+.card .label2,
+.card .label3,
+.card .label4 {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  font-size: 1.2em;
+  padding: 10px 0;
+}
+
+.spot {
+  position: relative;
+  width: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.spot img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.spot .label1,
+.spot .label2,
+.spot .label3,
+.spot .label4 {
+  font-size: 1.2em;
+  padding: 10px 0;
+  color: #333;
+}
+
+.content-section {
+  text-align: center; /* 水平居中内容 */
+  padding: 20px;
+}
+
+.box {
+  width: 90%;
+  max-width: 1000px;
+  margin: 20px auto; /* 居中显示 */
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9); /* 背景半透明 */
+  border: 2px solid #ccc; /* 边框 */
+  border-radius: 15px; /* 圆角 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 阴影 */
+  text-align: center; /* 文字居中 */
+}
+
+.box h2,
+.box h3,
+.box p {
+  text-align: center; /* 保证标题和段落居中 */
+  margin-bottom: 15px;
+}
+
+.box .carousel {
+  margin-bottom: 20px; /* 图片和文字之间的间距 */
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.features {
+  list-style: none;
+  margin-bottom: 15px;
+}
+
+.hotel-card {
+  display: flex;
+  flex-direction: column; /* 垂直排列 */
+  gap: 20px; /* 每个酒店卡片之间的间距 */
+  width: 90%;
+  max-width: 1000px;
+  margin: 20px auto;
+}
+
+.hotel-image img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.hotel-details {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.hotel-header h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.rating {
+  font-size: 18px;
+  color: #f39c12;
+  margin-bottom: 10px;
+}
+
+.features {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 15px;
+}
+
+.features li {
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.actions {
+  margin-top: 10px;
+}
+
+.show-prices {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.show-prices:hover {
+  background-color: #0056b3;
+}
+
+/* 手机端优化 */
+@media (max-width: 768px) {
+  .hotel-card {
+    width: 95%;
+  }
+
+  .hotel-image img {
+    height: 200px;
+  }
+
+  .features li {
+    font-size: 14px;
+  }
+}
+
+/* 容器样式 */
+.container {
+  display: flex;
+  flex-direction: column; /* 垂直排列两行 */
+  gap: 20px; /* 行间距 */
+  align-items: center;
+}
+
+/* 每一行卡片 */
+.row {
+  display: flex;
+  justify-content: center; /* 水平居中 */
+  gap: 20px; /* 卡片之间的间距 */
+}
+
+/* 食物卡片样式 */
+.card {
+  width: 250px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* 标签样式 */
+.card .label1,
+.card .label2,
+.card .label3,
+.card .label4 {
+  padding: 10px 0;
+  font-size: 18px;
+  color: #fff;
+  font-weight: bold;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.card .label1 {
+  background-color: rgba(255, 193, 7, 0.9);
+}
+
+.card .label2 {
+  background-color: rgba(7, 255, 81, 0.9);
+}
+
+.card .label3 {
+  background-color: rgba(7, 94, 255, 0.9);
+}
+
+.card .label4 {
+  background-color: rgba(255, 7, 189, 0.9);
+}
+
+/* 手机端布局优化 */
+@media (max-width: 600px) {
+  .row {
+    flex-direction: column; /* 小屏幕单列排列 */
+    align-items: center;
+  }
+}
